@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{CFE839A3-C8BF-5FA6-31CB-6593349E9FD9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ShowLetter.cs">
+    <Files>
+      <File FileName="Assets/Script/Places.cs" Line="12" Column="9" />
+      <File FileName="Assets/Script/UI script/UI_Buttons.cs" Line="5" Column="1" />
+      <File FileName="Assets/Script/Info.cs" Line="22" Column="2" />
+      <File FileName="Assets/Script/MenuManager.cs" Line="64" Column="10" />
+      <File FileName="Assets/Script/test/TeleportScript.cs" Line="24" Column="2" />
+      <File FileName="Assets/Script/ShowLetter.cs" Line="20" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
