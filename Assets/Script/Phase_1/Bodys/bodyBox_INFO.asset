@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948debbf14aa84c1ebdef00476500cb6, type: 3}
+  m_Name: bodyBox_INFO
+  m_EditorClassIdentifier: 
+  imageMainBody_w:
+  - {fileID: 21300000, guid: 8b52709bb066f42cf9d42c384bc1b4c0, type: 3}
+  - {fileID: 21300000, guid: fde618122e45247d5b6e13e25789cef5, type: 3}
+  - {fileID: 21300000, guid: a6450c28ce79046ccab921c41ebb89dc, type: 3}
+  imageMainBody_m:
+  - {fileID: 21300000, guid: 0efca2c8ab9ab4c728c66b3f6b38eb6a, type: 3}
+  - {fileID: 21300000, guid: 01083ed24d14143849d2d48879993553, type: 3}
+  - {fileID: 21300000, guid: db12db819caba4679b56b385f663e16d, type: 3}
+  imageHead_w:
+  - {fileID: 21300000, guid: b7cc3e774380f4e278b681a7463b3db3, type: 3}
+  - {fileID: 21300000, guid: a61cfb48c6885407eb18cd0dc416d3f1, type: 3}
+  - {fileID: 21300000, guid: 2f654006f92a74ad995d762b02b88902, type: 3}
+  - {fileID: 21300000, guid: b319d8fcc3be646158ff03686fbabcdd, type: 3}
+  - {fileID: 21300000, guid: 15a51d07ad31b4cb4954ef170bae2d72, type: 3}
+  - {fileID: 21300000, guid: dea667ca4b4fe4912b4c37b438d67dc9, type: 3}
+  - {fileID: 21300000, guid: ee508ad89c9094da6b0c40228cbc2e86, type: 3}
+  imageHead_m:
+  - {fileID: 21300000, guid: dedff596fe25b4692b06ff85cea8a466, type: 3}
+  - {fileID: 21300000, guid: f8ad525d65fff438eab49b58f5ebeca0, type: 3}
+  - {fileID: 21300000, guid: ea6a6c3542bc446ab97f186246877030, type: 3}
+  - {fileID: 21300000, guid: 27441b44251b84ebd9208c7398af4be7, type: 3}
+  - {fileID: 21300000, guid: 9a4a5d1d952ac4725b01048cffe630ac, type: 3}
+  - {fileID: 21300000, guid: 4890b64103179453d9b2e149413c1227, type: 3}
+  - {fileID: 21300000, guid: e9861ec51e7ef433e85408c09d24c7e6, type: 3}
+  imageRightHand:
+  - {fileID: 21300000, guid: 8b83486ae9a5843fd9fd613758f95286, type: 3}
+  - {fileID: 21300000, guid: 5f3676a541eca4bf48730047324391a2, type: 3}
+  - {fileID: 21300000, guid: 9151f9eb4ecb4475eb940fd81b76b2a2, type: 3}
+  - {fileID: 21300000, guid: 32720a5fdf96446708653004fa298a9b, type: 3}
+  imageLeftHand:
+  - {fileID: 21300000, guid: f8445431f77df40ef84521d7a1a6c119, type: 3}
+  - {fileID: 21300000, guid: 1b2b8f704001a48e49a443b02f9bd0da, type: 3}
+  - {fileID: 21300000, guid: 9f61f6f8d2a5c40d089f0e58d1a9cd08, type: 3}
+  - {fileID: 21300000, guid: 0addad280318446219bd65380fcd179a, type: 3}
+  imageLeftFoot:
+  - {fileID: 21300000, guid: 5759fc00c8f474832a427903a4573765, type: 3}
+  - {fileID: 21300000, guid: 3d4673d774a074887aa0dffb9afe8695, type: 3}
+  - {fileID: 21300000, guid: a28195f17c2e04041bd2cf5f1afc1558, type: 3}
+  - {fileID: 21300000, guid: 79b9bddcc1aab404883240a6790e7863, type: 3}
+  imageRightFoot:
+  - {fileID: 21300000, guid: c590b20b807df4554ac1fcc8181cb26b, type: 3}
+  - {fileID: 21300000, guid: cc7ac401406f0474da04a7009fb355bf, type: 3}
+  - {fileID: 21300000, guid: 9910d9303e2334b8994c901a2da67eeb, type: 3}
+  - {fileID: 21300000, guid: f2fff9bd9499e45c198c62de67f3491d, type: 3}
+  imageDopSkarm:
+  - {fileID: 21300000, guid: e97596c51fd7d41668b0821e292b9896, type: 3}
+  - {fileID: 21300000, guid: 2418e59c8d8224364b561b561ae4e9d9, type: 3}
+  - {fileID: 21300000, guid: 34ec7786ae7514d36bb3fd006325a2f1, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  - {fileID: 21300000, guid: 9cf3ce4e83dee40cf8a081f14c6c7b26, type: 3}
+  firstName:
+  - "\u041A\u0438\u0440\u0438\u043B\u043B"
+  - "\u0412\u0430\u0434\u0438\u043C"
+  - "\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\u0430"
+  - "\u041B\u0438\u043B\u0443"
+  - "\u041B\u043E\u0440\u043A"
+  - "\u0416\u0430\u0431"
+  - "\u041F\u0430\u0432\u0435\u043B"
+  - "\u041F\u0435\u043D\u044C"
+  secondName:
+  - "\u0427\u0451\u0440\u043D\u044B\u0439"
+  - ' '
+  - "\u041B\u0443\u0447\u0435\u0437\u0430\u0440\u043D\u044B\u0439"
+  - "\u041D\u0435\u043F\u043E\u0431\u0435\u0434\u0438\u043C\u044B\u0439"
+  - "\u0421\u0435\u0440\u044B\u0439"
+  - "\u0427\u0435\u0440\u043D\u043E\u0433\u043E\u043B\u043E\u0432"
+  - "\u041E\u043B\u043E\u0440\u043E\u043D\u043E"
+  - "\u041F\u043E\u0434\u0431\u0435\u0440"
+  - "\u0424\u043E\u043D \u0414\u0438\u043D"
+  - "\u041A\u043E\u043B\u043E\u0434\u0437\u0435\u0432"
+  - "\u041A\u043E\u0442\u043E\u0432"
+  - "\u041F\u043E\u0441\u043E\u0432\u0430\u043B"
+  - ' '
+  - ' '

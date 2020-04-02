@@ -5,11 +5,21 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject Choice, MainPlaces, Letter, sL, YesNo;
-    public GameObject letterParent, letter;
+    public GameObject Choice, MainPlaces, LetterButton, Letter,UI;
+    public GameObject Ph_1, Ph_2, Ph_3;
+    public GameObject selectDistr, bodyInfo;
+    public GameObject doc_1, doc_2, doc_3;
+    public GameObject cemetryInfoCard;
+    public Text cemetryInfoCard_name;
+    //
+    public int bodyTurn = 7; //очередь (скольких обрабатываем) 
+    //вычислять отдельно, но пока так
+    public Text bodyTurnText;
+
     private ShowLetter s;
     public static MenuManager instance = null;
 
+  
 
     public delegate void ClickAction();
     public static event ClickAction OnLetterQuest;
@@ -17,9 +27,9 @@ public class MenuManager : MonoBehaviour
     public static event ClickAction StartPh_2;
     public static event ClickAction StartPh_3;
 
-
     void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
@@ -30,56 +40,101 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-
-    void Start()
+   public void Start()
     {
-       if (Info.instance.newGame)
+     bodyTurnText.text = "" + bodyTurn;
+        CloseDocumentWindows();
+        ShowChoiceDistr(false);
+       if ((Info.instance.newGame)&&(Info.instance.SS!=Info.SideStatus.Null))
         {//закрываем все подменю на всякий
             Choice.SetActive(false);
-            YesNo.SetActive(false);
-            sL.SetActive(true);
+            UI.SetActive(true);
             MainPlaces.SetActive(true);
         }
        else
         { //начало новой  игры
+            UI.SetActive(false);
             Choice.SetActive(true);
-            YesNo.SetActive(false);
-            sL.SetActive(false);
             MainPlaces.SetActive(false);
+            Ph_1.SetActive(false);
+            Ph_3.SetActive(false);
+            Ph_2.SetActive(false);
         }
+        Letter.SetActive(true);
+        cemetryInfoCard.SetActive(false);
     }
 
-    public void MakeChoice(int a) //выбор стороны
+    public void CloseDocumentWindows()
+    { doc_1.SetActive(false);
+        doc_2.SetActive(false);
+        doc_3.SetActive(false);
+    }
+
+    public void  MakeChoiceA()
     {
-        Debug.Log("Вы сделали выбор за сторону " + a+" !");
+        UI.SetActive(true);
+        Info.instance.SS = Info.SideStatus.A;
+        Debug.Log("Вы сделали выбор за сторону !");
         Choice.SetActive(false);
-        sL.SetActive(true);
         MainPlaces.SetActive(true);
+        Ph_1.SetActive(true);
         Info.instance.StartNewGame();
     }
 
+    public void MakeChoiceB()
+    {
+        UI.SetActive(true);
+        Info.instance.SS = Info.SideStatus.B;
+        Debug.Log("Вы сделали выбор за сторону !");
+        Choice.SetActive(false);
+        MainPlaces.SetActive(true);
+        Ph_1.SetActive(true);
+        Info.instance.StartNewGame();
+    }
+
+
     public void ShowLetter(GameObject t)
     {
-        
-       // t.SetActive(false);
+        //создавать письмо (не обязательно?)
+      //  Instantiate(t, new Vector3(0, 1, 0), Quaternion.identity);
         if (OnLetterQuest != null)
-            OnLetterQuest();
-        // s= Instantiate(letter, letterParent.transform).GetComponent<ShowLetter>();
-        //  s.Moving();
+            OnLetterQuest(); //?
+      LetterButton.SetActive(false);
     }
 
-    public void CloseLetter(GameObject f)
+    public void ShowChoiceDistr(bool a)
     {
-        //Destroy(f);
-        //f.SetActive(false);
+        selectDistr.SetActive(a); ;
+         bodyInfo.SetActive(a); ;
     }
 
-    public void ShowPhase_1()
+    public void ShowPhase_1() //фаза выбора
     {
-        YesNo.SetActive(true);
+        Ph_1.SetActive(true);
+        Ph_2.SetActive(false);
+        Ph_3.SetActive(false);
+        Letter.SetActive(true);
     }
 
+    public void ShowPhase_2()
+    {
+        Ph_2.SetActive(true);
+        Ph_1.SetActive(false);
+        Ph_3.SetActive(false);
+        Letter.SetActive(false);
+    }
 
+    public void ShowPhase_3()
+    {
+        Ph_3.SetActive(true);
+        Ph_2.SetActive(false);
+        Ph_1.SetActive(false);
+    }
 
+    public void Burn()//сжечь тело, на вход нужно будет доавть экземпляр, но это позже 
+    {
+        Info.instance.money += BodyMove.instance.bodyInfo.money;
+        Info.instance.SetMoneyInfo();
 
+    }
 }

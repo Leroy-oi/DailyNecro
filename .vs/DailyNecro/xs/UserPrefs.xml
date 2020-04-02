@@ -1,12 +1,23 @@
 ﻿<Properties StartupConfiguration="{CFE839A3-C8BF-5FA6-31CB-6593349E9FD9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ShowLetter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Сemetery.cs">
     <Files>
-      <File FileName="Assets/Script/Places.cs" Line="12" Column="9" />
-      <File FileName="Assets/Script/UI script/UI_Buttons.cs" Line="5" Column="1" />
-      <File FileName="Assets/Script/Info.cs" Line="22" Column="2" />
-      <File FileName="Assets/Script/MenuManager.cs" Line="64" Column="10" />
-      <File FileName="Assets/Script/test/TeleportScript.cs" Line="24" Column="2" />
-      <File FileName="Assets/Script/ShowLetter.cs" Line="20" Column="5" />
+      <File FileName="Assets/Script/UI script/UI_Buttons.cs" Line="15" Column="28" />
+      <File FileName="Assets/Script/Info.cs" Line="14" Column="20" />
+      <File FileName="Assets/Script/MenuManager.cs" Line="76" Column="46" />
+      <File FileName="Assets/Script/test/TeleportScript.cs" Line="20" Column="9" />
+      <File FileName="Assets/Script/Phase_1/ShowLetter.cs" Line="45" Column="52" />
+      <File FileName="Assets/Script/test/EventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/SaveSystem.cs" Line="12" Column="9" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Body_Object_Info.cs" Line="18" Column="34" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Himera_Object.cs" Line="9" Column="1" />
+      <File FileName="Assets/Script/Animations_master.cs" Line="26" Column="19" />
+      <File FileName="Assets/Script/UI script/DragUI.cs" Line="7" Column="38" />
+      <File FileName="Assets/Script/UI script/DragHandler.cs" Line="120" Column="13" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Simple_Body.cs" Line="11" Column="4" />
+      <File FileName="Assets/Script/BurialPlaces.cs" Line="10" Column="19" />
+      <File FileName="Assets/Script/Phase_1/BodyMove.cs" Line="91" Column="9" />
+      <File FileName="Assets/Script/Сemetery.cs" Line="26" Column="17" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Body_Object_Clon.cs" Line="12" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
