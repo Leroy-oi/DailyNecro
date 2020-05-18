@@ -7,10 +7,28 @@ public class Info : MonoBehaviour
 {
     public static Info instance = null;
     public MenuManager MM;
-    public int a=3;
+    public int a = 3;
+   
     public int money = 0;
     public bool newGame = false; //начата ли новая игра (т.е. есть ли сохранение)
+    public bool knife = false;
+    public int cotton=10; //нитки для сшивания
+    public int wood=10;//на самом деле гробы, можно забить на материалы
     public GameObject moneyText;
+    public Text woodText;
+    public int woodPrice, cottonPrice, knifePrice;
+   /* public enum Class
+    {
+        normal,//все
+        doctor,
+        rang_1,
+        rang_2,
+        rang_3,
+        rang_4,
+        criminal
+    }*/
+    public Goal goal_1, goal_2, goal_3, goal_4, goal_5, goal_6, goal_7;// = new Goal(Class.normal, 3);
+// цель
     public enum SideStatus//за какую сторону
     {
         A,
@@ -26,8 +44,38 @@ public class Info : MonoBehaviour
         End
     }
 
+
+
+
     public SideStatus SS = SideStatus.Null;
     public GameStatus AA = GameStatus.Start;
+
+
+    void Awake() //работает до любых start
+    {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Debug.Log("клон уничтожен / ошибка " + gameObject);
+            Destroy(gameObject);
+        }
+
+
+        UpdateWood();
+        LoadInfo();
+        SetMoneyInfo();
+
+       
+        // объект не уничтожается при переходе на другую сцену игры
+        //  DontDestroyOnLoad(gameObject);
+
+    }
+
+
 
     public void LoadInfo()
     {
@@ -60,35 +108,24 @@ public class Info : MonoBehaviour
 
     }
 
+    public void UpdateWood()
+    {
+        woodText.text = "" + wood;
+    }
 
     public void SetMoneyInfo()
     {
         moneyText.GetComponent<Text>().text = "" + money;
     }
 
-    void Awake() //работает до любых start
-    {
-        LoadInfo(); 
-        SetMoneyInfo();
-
-        if (instance == null)
-        {
-            instance = this; 
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        // объект не уничтожается при переходе на другую сцену игры
-      //  DontDestroyOnLoad(gameObject);
-
-    }
+  
 
     public void StartNewGame()
     {
         newGame = true;
+        wood = 10;
         StartPhase_1();
+       
     }
 
     public void StartPhase_1()
@@ -102,9 +139,11 @@ public class Info : MonoBehaviour
 
     void OnEnable()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         MenuManager.StartPh_1 += W;
-      
-
     }
 
     void OnDisable()
@@ -124,4 +163,5 @@ public class Info : MonoBehaviour
         SaveInfo();
     }
 
+     
 }

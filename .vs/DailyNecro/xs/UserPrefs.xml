@@ -1,23 +1,31 @@
 ﻿<Properties StartupConfiguration="{CFE839A3-C8BF-5FA6-31CB-6593349E9FD9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Сemetery.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader">
     <Files>
-      <File FileName="Assets/Script/UI script/UI_Buttons.cs" Line="15" Column="28" />
-      <File FileName="Assets/Script/Info.cs" Line="14" Column="20" />
-      <File FileName="Assets/Script/MenuManager.cs" Line="76" Column="46" />
-      <File FileName="Assets/Script/test/TeleportScript.cs" Line="20" Column="9" />
-      <File FileName="Assets/Script/Phase_1/ShowLetter.cs" Line="45" Column="52" />
-      <File FileName="Assets/Script/test/EventManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/SaveSystem.cs" Line="12" Column="9" />
-      <File FileName="Assets/Script/Phase_1/Bodys/Body_Object_Info.cs" Line="18" Column="34" />
-      <File FileName="Assets/Script/Phase_1/Bodys/Himera_Object.cs" Line="9" Column="1" />
-      <File FileName="Assets/Script/Animations_master.cs" Line="26" Column="19" />
-      <File FileName="Assets/Script/UI script/DragUI.cs" Line="7" Column="38" />
-      <File FileName="Assets/Script/UI script/DragHandler.cs" Line="120" Column="13" />
-      <File FileName="Assets/Script/Phase_1/Bodys/Simple_Body.cs" Line="11" Column="4" />
-      <File FileName="Assets/Script/BurialPlaces.cs" Line="10" Column="19" />
-      <File FileName="Assets/Script/Phase_1/BodyMove.cs" Line="91" Column="9" />
-      <File FileName="Assets/Script/Сemetery.cs" Line="26" Column="17" />
+      <File FileName="Assets/Script/Phase_1/Phase_1.cs" Line="94" Column="7" />
+      <File FileName="Assets/Script/Info.cs" Line="111" Column="2" />
+      <File FileName="Assets/Script/MenuManager.cs" Line="117" Column="17" />
+      <File FileName="Assets/Script/Phase_1/BodyMove.cs" Line="55" Column="17" />
+      <File FileName="Assets/Script/Сemetery.cs" Line="51" Column="30" />
+      <File FileName="Assets/Script/Animations_master.cs" Line="51" Column="36" />
+      <File FileName="Assets/Script/Phase_2/Phase_2.cs" Line="241" Column="45" />
+      <File FileName="Assets/Script/BurialPlaces.cs" Line="29" Column="61" />
+      <File FileName="Assets/Script/Phase_2/CoffinMove.cs" Line="92" Column="2" />
+      <File FileName="Assets/Script/Phase_2/BodyPart.cs" Line="19" Column="15" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Simple_Body.cs" Line="39" Column="7" />
+      <File FileName="Assets/Script/Shop.cs" Line="45" Column="26" />
+      <File FileName="Assets/Script/Army.cs" Line="36" Column="62" />
+      <File FileName="Assets/Script/Phase_3/respawnBody.cs" Line="31" Column="44" />
+      <File FileName="Assets/Script/Phase_3/Phase_3.cs" Line="124" Column="41" />
+      <File FileName="Assets/Script/UI script/UI_Buttons.cs" Line="12" Column="15" />
+      <File FileName="Assets/Script/Phase_3/CloseThis.cs" Line="8" Column="21" />
+      <File FileName="Assets/Script/Goal.cs" Line="18" Column="8" />
+      <File FileName="Assets/Script/Phase_1/Bodys/Body_Object_Info.cs" Line="32" Column="6" />
       <File FileName="Assets/Script/Phase_1/Bodys/Body_Object_Clon.cs" Line="12" Column="17" />
+      <File FileName="Assets/Script/Class.cs" Line="15" Column="17" />
+      <File FileName="Assets/Script/Phase_1/ShowLetter.cs" Line="122" Column="4" />
+      <File FileName="../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Selectable.cs" Line="493" Column="1" />
+      <File FileName="Assets/Sounds/PlayMusic.cs" Line="22" Column="29" />
+      <File FileName="Assets/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

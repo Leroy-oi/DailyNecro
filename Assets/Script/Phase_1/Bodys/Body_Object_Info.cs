@@ -6,15 +6,15 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "bodyBox_", menuName = "bodyBox")]
 public class Body_Object_Info : ScriptableObject
 { //хранилище рандомных данных, что могут быть даны телу.
-    public Sprite[] imageMainBody_w;
-    public Sprite[] imageMainBody_m;
-    public Sprite[] imageHead_w;
-    public Sprite[] imageHead_m;
-    public Sprite[] imageRightHand;
-    public Sprite[] imageLeftHand;
-    public Sprite[] imageLeftFoot;
-    public Sprite[] imageRightFoot;
-
+    public BodyPart[] partMainBody_w;
+    public BodyPart[] partMainBody_m;
+    public BodyPart[] partHead_w;
+    public BodyPart[] partHead_m;
+    public BodyPart[] partRightHand;
+    public BodyPart[] partLeftHand;
+    public BodyPart[] partLeftFoot;
+    public BodyPart[] partRightFoot;
+    public BodyPart null_L_hand, null_R_hand, null_L_foot, null_R_foot;
     public Sprite[] imageDopSkarm;
 
 
@@ -26,9 +26,9 @@ public class Body_Object_Info : ScriptableObject
 
     public enum Side
     {
-    A,
-       B,
-       C
+        A,
+        B,
+        C
     }
     public string[] firstName; //имя 
     public string[] secondName;//фамилия

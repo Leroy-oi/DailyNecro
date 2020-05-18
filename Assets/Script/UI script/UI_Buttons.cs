@@ -4,7 +4,8 @@ using UnityEngine; using UnityEngine.SceneManagement; using UnityEngine.UI;�
 
 public class UI_Buttons : MonoBehaviour
 {
-
+    public GameObject P1_B1, P1_B2, P1_B3;
+    public Сemetery cemetery;
   public void CloseWindow(GameObject window)
     { window.SetActive(false); }
 

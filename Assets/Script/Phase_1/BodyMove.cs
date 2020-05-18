@@ -18,7 +18,7 @@ public class BodyMove : MonoBehaviour
     private bool moveInCenter, openCape = false;
     public Text nameFild, moneyFild;
 
-    public Body_Object_Info info;
+    public Body_Object_Info info; //всё помечено как image, но это объекты
     // public Body_Object_Clon clon;
 
 
@@ -55,39 +55,51 @@ public class BodyMove : MonoBehaviour
     public void createNew()//Body_Object_Clon type)
     {//расписать тут создание нового клона
         //+ заполнение всех параметров
+
+        Debug.Log("Вызов createNew");
         bodyInfo.fullName = info.firstName[Random.Range(0, info.firstName.Length - 1)] + " " + info.secondName[Random.Range(0, info.secondName.Length - 1)];
         nameFild.text = bodyInfo.fullName;
 
         int s = Random.Range(0, 10);
-        Debug.Log("s= " + s);
         // Присвоить enum(?)
         if (s>=5)
         {
-            bodyInfo.imageMainBody = info.imageMainBody_m[Random.Range(0, info.imageMainBody_m.Length - 1)];
-            bodyInfo.imageHead = info.imageHead_m[Random.Range(0, info.imageHead_m.Length - 1)];
+            bodyInfo.partMainBody = info.partMainBody_m[Random.Range(0, info.partMainBody_m.Length - 1)];
+            bodyInfo.partHead = info.partHead_m[Random.Range(0, info.partHead_m.Length - 1)];
             bodyInfo.gendre = "m";
         }
         else {
-            bodyInfo.imageMainBody = info.imageMainBody_w[Random.Range(0, info.imageMainBody_w.Length - 1)];
-            bodyInfo.imageHead = info.imageHead_w[Random.Range(0, info.imageHead_w.Length - 1)];
+            bodyInfo.partMainBody = info.partMainBody_w[Random.Range(0, info.partMainBody_w.Length - 1)];
+            bodyInfo.partHead = info.partHead_w[Random.Range(0, info.partHead_w.Length - 1)];
             bodyInfo.gendre = "w";
         }
-       
+   
 
-        bodyInfo.imageLeftFoot = info.imageLeftFoot[Random.Range(0, info.imageLeftFoot.Length - 1)];
-        bodyInfo.imageLeftHand = info.imageLeftHand[Random.Range(0, info.imageLeftHand.Length - 1)];
-        bodyInfo.imageRightFoot = info.imageRightFoot[Random.Range(0, info.imageRightFoot.Length - 1)];
-        bodyInfo.imageRightHand = info.imageRightHand[Random.Range(0, info.imageRightHand.Length - 1)];
+        if (Phase_1.instance.dayWeek == 0)
+        {
+            bodyInfo.partLeftFoot = info.partLeftFoot[Random.Range(0, info.partLeftFoot.Length-1)];
+            bodyInfo.partLeftHand = info.partLeftHand[Random.Range(0, info.partLeftHand.Length-1)];
+            bodyInfo.partRightFoot = info.partRightFoot[Random.Range(0, info.partRightFoot.Length-1)];
+            bodyInfo.partRightHand = info.partRightHand[Random.Range(0, info.partRightHand.Length-1)];
+        }
 
+        else
+        {
+            bodyInfo.partLeftFoot = info.partLeftFoot[Random.Range(0, info.partLeftFoot.Length)];
+            bodyInfo.partLeftHand = info.partLeftHand[Random.Range(0, info.partLeftHand.Length)];
+            bodyInfo.partRightFoot = info.partRightFoot[Random.Range(0, info.partRightFoot.Length)];
+            bodyInfo.partRightHand = info.partRightHand[Random.Range(0, info.partRightHand.Length)];
+
+        }
         bodyInfo.imageDopSkarm = info.imageDopSkarm[Random.Range(0, info.imageDopSkarm.Length - 1)];
 
 
-        body.GetComponent<Image>().sprite = bodyInfo.imageMainBody;
-        head.GetComponent<Image>().sprite = bodyInfo.imageHead;
-        l_hand.GetComponent<Image>().sprite = bodyInfo.imageLeftHand;
-        r_hand.GetComponent<Image>().sprite = bodyInfo.imageRightHand;
-        l_foot.GetComponent<Image>().sprite = bodyInfo.imageLeftFoot;
-        r_foot.GetComponent<Image>().sprite = bodyInfo.imageRightFoot;
+        body.GetComponent<Image>().sprite = bodyInfo.partMainBody.part_img;
+        head.GetComponent<Image>().sprite = bodyInfo.partHead.part_img;
+        l_hand.GetComponent<Image>().sprite = bodyInfo.partLeftHand.part_img;
+        r_hand.GetComponent<Image>().sprite = bodyInfo.partRightHand.part_img;
+        l_foot.GetComponent<Image>().sprite = bodyInfo.partLeftFoot.part_img;
+        r_foot.GetComponent<Image>().sprite = bodyInfo.partRightFoot.part_img;
 
         face_scarm.GetComponent<Image>().sprite = bodyInfo.imageDopSkarm;
 
@@ -112,7 +124,7 @@ public class BodyMove : MonoBehaviour
 
     void Update()
     {
-        if (MenuManager.instance.bodyTurn > 0)
+        if (Phase_1.instance.bodyTurn[Phase_1.instance.dayWeek] > 0)
             if (moveObj.transform.localPosition.y > target.y)
             {
                 //   Debug.Log(body.transform.localPosition.y + " " + target.y);
@@ -124,19 +136,19 @@ public class BodyMove : MonoBehaviour
                 vector = new Vector3(0, 0, 0);
                 //проверять статус
                 if (moveInCenter)
-                    MenuManager.instance.ShowChoiceDistr(true);
+                    Phase_1.instance.ShowChoiceDistr(true);
                 else
                 {
-                    MenuManager.instance.ShowChoiceDistr(false);
-                    MenuManager.instance.bodyTurn -= 1;
-                    MenuManager.instance.bodyTurnText.text = "" + MenuManager.instance.bodyTurn;
+                    Phase_1.instance.ShowChoiceDistr(false);
+                    Phase_1.instance.bodyTurn[Phase_1.instance.dayWeek] -= 1;
+                    Phase_1.instance.bodyTurnText.GetComponent<Text>().text = "" + Phase_1.instance.bodyTurn[Phase_1.instance.dayWeek];
                      MoveToCenter();
                 }
             }
         else
         {
             Animations_master.instance.GoToNight();
-            MenuManager.instance.ShowPhase_2();
+         //   MenuManager.instance.ShowPhase_2();
         }
     }
 

@@ -5,30 +5,45 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject Choice, MainPlaces, LetterButton, Letter,UI;
-    public GameObject Ph_1, Ph_2, Ph_3;
-    public GameObject selectDistr, bodyInfo;
+    public GameObject Choice, MainPlaces, LetterButton, Letter, UI;
+    public GameObject Ph_3;
+    public Phase_1 Ph_1;
+    public Phase_2 Ph_2;
     public GameObject doc_1, doc_2, doc_3;
-    public GameObject cemetryInfoCard;
+    public CoffinMove coffin;
+    public GameObject cemetryInfoCard, circle;
+    public Shop shop;
     public Text cemetryInfoCard_name;
-    //
-    public int bodyTurn = 7; //очередь (скольких обрабатываем) 
-    //вычислять отдельно, но пока так
-    public Text bodyTurnText;
+    public bool isShop;
 
-    private ShowLetter s;
+    private int phaseNow = 1;
     public static MenuManager instance = null;
 
-  
+
 
     public delegate void ClickAction();
-    public static event ClickAction OnLetterQuest;
     public static event ClickAction StartPh_1;
     public static event ClickAction StartPh_2;
     public static event ClickAction StartPh_3;
 
+
+
     void Awake()
     {
+
+        if (phaseNow == 1)
+            ShowPhase_1();
+        else
+        if (phaseNow == 2)
+            ShowPhase_2();
+        else
+        if (phaseNow == 3)
+            ShowPhase_3();
+        else
+        {
+            ShowPhase_1();
+        }
+
 
         if (instance == null)
         {
@@ -38,46 +53,51 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        circle.SetActive(false);
+        shop.gameObject.SetActive(false);
+        isShop = false;
     }
 
-   public void Start()
+
+
+    public void Start()
     {
-     bodyTurnText.text = "" + bodyTurn;
         CloseDocumentWindows();
-        ShowChoiceDistr(false);
-       if ((Info.instance.newGame)&&(Info.instance.SS!=Info.SideStatus.Null))
+
+        if ((Info.instance.newGame) && (Info.instance.SS != Info.SideStatus.Null))
         {//закрываем все подменю на всякий
             Choice.SetActive(false);
             UI.SetActive(true);
             MainPlaces.SetActive(true);
         }
-       else
+        else
         { //начало новой  игры
             UI.SetActive(false);
             Choice.SetActive(true);
             MainPlaces.SetActive(false);
-            Ph_1.SetActive(false);
-            Ph_3.SetActive(false);
-            Ph_2.SetActive(false);
+            Ph_1.gameObject.SetActive(false);
+            Ph_3.gameObject.SetActive(false);
+            Ph_2.gameObject.SetActive(false);
         }
-        Letter.SetActive(true);
+        //  Letter.SetActive(true);
         cemetryInfoCard.SetActive(false);
     }
 
     public void CloseDocumentWindows()
-    { doc_1.SetActive(false);
+    {
+        doc_1.SetActive(false);
         doc_2.SetActive(false);
         doc_3.SetActive(false);
     }
 
-    public void  MakeChoiceA()
+    public void MakeChoiceA()
     {
         UI.SetActive(true);
         Info.instance.SS = Info.SideStatus.A;
         Debug.Log("Вы сделали выбор за сторону !");
         Choice.SetActive(false);
         MainPlaces.SetActive(true);
-        Ph_1.SetActive(true);
+        Ph_1.gameObject.SetActive(true);
         Info.instance.StartNewGame();
     }
 
@@ -88,53 +108,59 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Вы сделали выбор за сторону !");
         Choice.SetActive(false);
         MainPlaces.SetActive(true);
-        Ph_1.SetActive(true);
+        Ph_1.gameObject.SetActive(true);
         Info.instance.StartNewGame();
     }
 
 
-    public void ShowLetter(GameObject t)
-    {
-        //создавать письмо (не обязательно?)
-      //  Instantiate(t, new Vector3(0, 1, 0), Quaternion.identity);
-        if (OnLetterQuest != null)
-            OnLetterQuest(); //?
-      LetterButton.SetActive(false);
-    }
-
-    public void ShowChoiceDistr(bool a)
-    {
-        selectDistr.SetActive(a); ;
-         bodyInfo.SetActive(a); ;
-    }
 
     public void ShowPhase_1() //фаза выбора
     {
-        Ph_1.SetActive(true);
-        Ph_2.SetActive(false);
-        Ph_3.SetActive(false);
+        Ph_1.gameObject.SetActive(true);
+        Ph_2.gameObject.SetActive(false);
+        Ph_3.gameObject.SetActive(false);
         Letter.SetActive(true);
     }
 
     public void ShowPhase_2()
     {
-        Ph_2.SetActive(true);
-        Ph_1.SetActive(false);
-        Ph_3.SetActive(false);
+        Ph_2.gameObject.SetActive(true);
+        Ph_1.gameObject.SetActive(false);
+        Ph_3.gameObject.SetActive(false);
         Letter.SetActive(false);
     }
 
     public void ShowPhase_3()
     {
-        Ph_3.SetActive(true);
-        Ph_2.SetActive(false);
-        Ph_1.SetActive(false);
+        if (!Phase_2.instance.isDig)
+        {
+            Ph_3.gameObject.SetActive(true);
+            Ph_2.gameObject.SetActive(false);
+            Ph_1.gameObject.SetActive(false);
+        }
+
     }
 
-    public void Burn()//сжечь тело, на вход нужно будет доавть экземпляр, но это позже 
+    public void ShowCoffin(Simple_Body b)
     {
-        Info.instance.money += BodyMove.instance.bodyInfo.money;
-        Info.instance.SetMoneyInfo();
+        coffin.gameObject.SetActive(true);
+        coffin.PushInfo(b);
+    }
 
+    public void UnshowCoffin()
+    {
+        coffin.gameObject.SetActive(false);
+    }
+
+   
+    public void OpenShop()
+    {
+        if (isShop)
+            shop.gameObject.SetActive(false);
+        else
+        {
+            shop.gameObject.SetActive(true);
+            shop.UpdateText();
+        }
     }
 }
